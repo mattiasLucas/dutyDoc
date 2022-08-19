@@ -38,6 +38,13 @@ dependencies:
   dependencies:
   dotted_decoration: ^2.0.0
   simple_horizontal_stepper: ^0.0.1
+  google_maps: ^6.2.0
+ 
+  google_maps_flutter: ^2.1.12
+ 
+  google_maps_controller: ^1.2.0
+  
+  google_maps_widget: ^1.0.4
   
 
 dev_dependencies:
@@ -69,6 +76,11 @@ flutter:
       
       - assets/heart.webp
       - assets/tooth.png
+      - assets/visa.png
+      - assets/master.png
+      - assets/verve.png
+      - assets/visa2.png
+      - assets/doc.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
