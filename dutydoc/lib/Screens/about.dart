@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -33,7 +35,7 @@ class _AboutState extends State<About> {
             ),
           ),
           expandedHeight: 400.0,
-          leading: Icon(Icons.arrow_back),
+          leading: const Icon(Icons.arrow_back),
           actions: const [
             Icon(Icons.call),
             Icon(Icons.video_call),
@@ -153,6 +155,10 @@ class _AboutState extends State<About> {
                       target: _center,
                       zoom: 11.0,
                     ),
+                    // ignore: prefer_collection_literals
+                    gestureRecognizers: Set()
+                      ..add(Factory<EagerGestureRecognizer>(
+                          () => EagerGestureRecognizer())),
                   ),
                 ),
               ],
@@ -160,9 +166,7 @@ class _AboutState extends State<About> {
           ),
           bottom: PreferredSize(
             preferredSize: const Size.fromHeight(400.0),
-            child: Column(
-              children: [],
-            ),
+            child: Column(),
           ),
         ),
         SliverToBoxAdapter(
@@ -269,7 +273,7 @@ class _AboutState extends State<About> {
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10.0,
               ),
               Row(
@@ -283,6 +287,12 @@ class _AboutState extends State<About> {
                         fontWeight: FontWeight.bold),
                   ),
                   Container(
+                    width: 170.0,
+                    height: 30.0,
+                    decoration: BoxDecoration(
+                      color: Colors.green[800],
+                      borderRadius: BorderRadius.circular(11.0),
+                    ),
                     child: Center(
                       child: Text(
                         'Write a Review',
@@ -291,12 +301,6 @@ class _AboutState extends State<About> {
                             fontSize: 17.0,
                             fontWeight: FontWeight.bold),
                       ),
-                    ),
-                    width: 170.0,
-                    height: 30.0,
-                    decoration: BoxDecoration(
-                      color: Colors.green[800],
-                      borderRadius: BorderRadius.circular(11.0),
                     ),
                   ),
                 ],
@@ -317,11 +321,11 @@ class _AboutState extends State<About> {
                       Row(
                         children: const [
                           Padding(
-                            padding: const EdgeInsets.only(left: 8.0),
+                            padding: EdgeInsets.only(left: 8.0),
                             child: Text('Dr. Anthony Fauci'),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(left: 50.0),
+                            padding: EdgeInsets.only(left: 50.0),
                             child: Icon(
                               Icons.star,
                               color: Colors.yellow,

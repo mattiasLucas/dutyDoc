@@ -29,7 +29,7 @@ class _ReferState extends State<Refer> {
             centerTitle: true,
             flexibleSpace: SafeArea(
                 child: Column(
-              children: [],
+              children: const [],
             )),
             bottom: PreferredSize(
               preferredSize: const Size(0, 50),
